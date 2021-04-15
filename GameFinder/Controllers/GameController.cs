@@ -29,6 +29,7 @@ namespace GameFinder.Controllers
             return BadRequest(ModelState);
         }
 
+
         [HttpGet]
         public async Task<IHttpActionResult> GetAll()
         {
@@ -88,5 +89,122 @@ namespace GameFinder.Controllers
             }
             return InternalServerError();
         }
+
+
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAll()
+        {
+            var gameList = await _context.Game.ToListAsync();
+            var listOfFilteredGames = gameList.OrderBy(game => game.GameTitle);
+            return Ok(listOfFilteredGames);
+
+        }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> GetById([FromUri] int id)
+        {
+            Game game = await _context.Game.FindAsync(id);
+
+            if (game != null)
+            {
+                return Ok(game);
+            }
+            return BadRequest("No game found with that ID");
+        }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> GetByTitle([FromUri] string gameTitle)
+        {
+            var listOfGames = await _context.Game.Include(x => x.GameTitles).ToListAsync();
+            var listOfFilteredGames = listOfGames?.Where(x => x.GameTitle == gameTitle) ?? new List<Game>();
+            if (listOfFilteredGames != null)
+            {
+                return Ok(listOfFilteredGames);
+
+            }
+            return BadRequest("No game found with that title");
+
+        }
+
+        //[HttpGet]
+        //public async Task<IHttpActionResult> GetByGameTitle([FromUri] string gameTitle)
+        //{
+        //    List<Game> gameList = await _context.Game.ToListAsync();
+
+        //    foreach (Game game in gameList)
+        //    {
+        //        //if (gameTitle = Game.GameTitle && game != null)
+        //        {
+        //            return Ok(game);
+        //        }
+        //        return NotFound();
+        //    }
+
+        //    using (var ctx = new GameFinderDbContext())
+        //    {
+        //        gameList = ctx.Game.Include(gameTitle)
+        //                    .Select(s => new Game()
+        //                    {
+        //                        ID = s.ID,
+        //                        GameTitle = s.GameTitle,
+        //                    }).ToList<Game>();
+        //    }
+
+        //    if (gameList.Count == 0)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(gameList);
+
+
+        //}
+
+
+
+
+
+
+        //    Game game = await _context.Game.FindAsync(gameTitle);
+
+
+        //    if (game != null)
+        //    {
+        //        return Ok(game);
+        //    }
+        //    return NotFound();
+        //}
+
+        //[HttpGet]
+        //public async Task<IHttpActionResult> GetByGameTitle([FromBody] string gameTitle)
+        //{
+        //    Game game = await _context.Game.FindAsync(gameTitle);
+
+        //    if (gameTitle = Game.GameTitle && game != null)
+        //    {
+        //        return Ok(game);
+        //    }
+        //    return NotFound();
+
+
+
+        //foreach (Game game in _context)
+        //{
+        //    
+
+        //}
+        //return NotFound();
+        //}
+
+        //[HttpGet]
+        //public async Task<IHttpActionResult> GetAll()
+        //{
+        //Game game = await _context.Game.ToListAsync();
+        //return Ok(game);
+        //}
+
+      
+
+
     }
 }

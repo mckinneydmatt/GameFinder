@@ -9,14 +9,20 @@ namespace GameFinder.Models
 {
     public class Game
     {
+
         
         
+
+        public enum MaturityRating {E =1, E10, T, M }
+       //public enum Genre {Action =1, RPG, Shooter, Horror, Mystery, Puzzle, Moba }
+
 
         [Key]
         public int ID { get; set; }
 
         [Required]
         public string GameTitle { get; set; }
+
 
         //[Required]
         public string GameGenre { get; set; }
@@ -40,6 +46,24 @@ namespace GameFinder.Models
                     : 0;
             }
         }
+
+        public virtual List<Game> GameTitles { get; set; }
+        public bool IsSinglePlayer { get; set; }
+
+        // [Required]
+        public Genre GameGenre { get; set; }
+
+        public virtual List<Genre> Genres { get; set; }
+       // [Required]
+       // public Genre GameGenre { get; set; }
+        public int GameGenreId { get; set; }
+
+        public string GenreName { get; set; }
+
+
+       // [Required]
+        public MaturityRating MatRating { get; set; }
+
 
     }
 }
