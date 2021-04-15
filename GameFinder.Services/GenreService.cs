@@ -16,7 +16,7 @@ namespace GameFinder.Services
                 {
                     GameGenreId = model.GameGenreId,
                     GenreName = model.GenreName,
-                    ID = model.ID,
+                    GameID = model.ID,
                     GameTitle = model.GameTitle
                 };
 
@@ -39,7 +39,7 @@ namespace GameFinder.Services
                 return
                     new GenreDetail
                     {
-                        ID = entity.ID,
+                        GameID = entity.ID,
                         GameTitle = entity.GameTitle,
                        
                         GameGenreId = entity.GameGenreId,

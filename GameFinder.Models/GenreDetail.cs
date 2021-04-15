@@ -11,7 +11,7 @@ namespace GameFinder.Models
     {
         public int GameGenreId { get; set; }
         public string GenreName { get; set; }
-        public int ID { get; set; }
+        public int GameID { get; set; }
         public string GameTitle { get; set; }
     }
 }
