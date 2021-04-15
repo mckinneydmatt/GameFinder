@@ -29,12 +29,12 @@ namespace GameFinder.Controllers
             return BadRequest(ModelState);
         }
 
-        //[HttpGet]
-        //public async Task<IHttpActionResult> GetAll()
-        //{
-        //Game game = await _context.Game.ToListAsync();
-        //return Ok(game);
-        //}
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAll()
+        {
+            List<Game> game = await _context.Game.ToListAsync();
+            return Ok(game);
+        }
 
     }
 }
