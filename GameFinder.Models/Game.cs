@@ -16,11 +16,12 @@ namespace GameFinder.Models
         public int ID { get; set; }
 
         [Required]
-        public String GameTitle { get; set; }
-
+        public string GameTitle { get; set; }
+        public virtual List<Genre> Genres { get; set; }
        // [Required]
        // public Genre GameGenre { get; set; }
         public int GameGenreId { get; set; }
+
         public string GenreName { get; set; }
 
        // [Required]
