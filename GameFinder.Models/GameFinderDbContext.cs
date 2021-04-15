@@ -15,5 +15,6 @@ namespace GameFinder.Models
 
         }
         public DbSet<Game> Game { get; set; }
+        public DbSet<Genre> Genres { get; set; }
     }
 }
