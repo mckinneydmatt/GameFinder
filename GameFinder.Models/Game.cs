@@ -16,9 +16,11 @@ namespace GameFinder.Models
         public int ID { get; set; }
 
         [Required]
-        public String GameTitle { get; set; }
+        public string GameTitle { get; set; }
+        public virtual List<Game> GameTitles { get; set; }
+        public bool IsSinglePlayer { get; set; }
 
-       // [Required]
+        // [Required]
         public Genre GameGenre { get; set; }
 
        // [Required]
