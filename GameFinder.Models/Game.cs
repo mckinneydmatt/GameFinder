@@ -16,7 +16,7 @@ namespace GameFinder.Models
         public int ID { get; set; }
 
         [Required]
-        public String GameTitle { get; set; }
+        public string GameTitle { get; set; }
 
         //[Required]
         public string GameGenre { get; set; }

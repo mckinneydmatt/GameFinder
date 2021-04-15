@@ -16,7 +16,7 @@ namespace GameFinder.Controllers
         private readonly GameFinderDbContext _context = new GameFinderDbContext();
 
         [HttpPost]
-        public async Task<IHttpActionResult> AddGame([FromBody] Models.Game model)
+        public async Task<IHttpActionResult> AddGame([FromBody] Game model)
         {
             if (model is null)
                 return BadRequest("Your request body cannot be empty.");
@@ -32,14 +32,15 @@ namespace GameFinder.Controllers
         [HttpGet]
         public async Task<IHttpActionResult> GetAll()
         {
-            List<Models.Game> game = await _context.Game.ToListAsync();
-            return Ok(game);
+            List<Game> game = await _context.Game.ToListAsync();
+            var sorted = game.OrderBy(i => i.GameTitle);
+            return Ok(sorted);
         }
 
         [HttpGet]
         public async Task<IHttpActionResult> GetByID([FromUri] int id)
         {
-            Models.Game game = await _context.Game.FindAsync(id);
+            Game game = await _context.Game.FindAsync(id);
 
             if(game != null)
             {
