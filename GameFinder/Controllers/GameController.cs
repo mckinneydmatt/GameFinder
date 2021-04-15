@@ -33,6 +33,67 @@ namespace GameFinder.Controllers
         [HttpGet]
         public async Task<IHttpActionResult> GetAll()
         {
+            List<Game> game = await _context.Game.ToListAsync();
+            var sorted = game.OrderBy(i => i.GameTitle);
+            return Ok(sorted);
+        }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> GetByID([FromUri] int id)
+        {
+            Game game = await _context.Game.FindAsync(id);
+
+            if(game != null)
+            {
+                return Ok(game);
+            }
+            return NotFound();
+        }
+
+        [HttpPut]
+        public async Task<IHttpActionResult> EditGame([FromUri] int id, [FromBody] Models.Game editGame)
+        {
+            if(id != editGame?.ID)
+            {
+                return BadRequest("IDs do not match");
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            Models.Game game = await _context.Game.FindAsync(id);
+
+            if (game is null)
+                return NotFound();
+
+            game.GameTitle = editGame.GameTitle;
+
+            await _context.SaveChangesAsync();
+            return Ok("Game was updated!");
+            
+
+            
+        }
+
+        [HttpDelete]
+        public async Task<IHttpActionResult> DeleteGame([FromUri] int id)
+        {
+            Models.Game game = await _context.Game.FindAsync(id);
+            if (game is null)
+                return NotFound();
+            _context.Game.Remove(game);
+
+            if (await _context.SaveChangesAsync() == 1)
+            {
+                return Ok("The game was deleted");
+            }
+            return InternalServerError();
+        }
+
+
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAll()
+        {
             var gameList = await _context.Game.ToListAsync();
             var listOfFilteredGames = gameList.OrderBy(game => game.GameTitle);
             return Ok(listOfFilteredGames);
@@ -143,6 +204,7 @@ namespace GameFinder.Controllers
         //}
 
       
+
 
     }
 }
