@@ -9,8 +9,8 @@ namespace GameFinder.Models
 {
     public class Game
     {
-        public enum MaturityRating {E =1, E10, T, M }
-        public enum Genre {Action =1, RPG, Shooter, Horror, Mystery, Puzzle, Moba }
+        
+        
 
         [Key]
         public int ID { get; set; }
@@ -18,11 +18,28 @@ namespace GameFinder.Models
         [Required]
         public String GameTitle { get; set; }
 
-       // [Required]
-        public Genre GameGenre { get; set; }
+        //[Required]
+        public string GameGenre { get; set; }
 
-       // [Required]
-        public MaturityRating MatRating { get; set; }
+        //[Required]
+        public string MaturityRating { get; set; }
+
+        public virtual List<Rating> Ratings { get; set; } = new List<Rating>();
+
+        public double Rating
+        {
+            get
+            {
+                double totalAverageRating = 0;
+                foreach(var rating in Ratings)
+                {
+                    totalAverageRating += rating.AverageRating;
+                }
+                return Ratings.Count > 0
+                    ? Math.Round(totalAverageRating / Ratings.Count, 2)
+                    : 0;
+            }
+        }
 
     }
 }
