@@ -19,18 +19,18 @@ namespace GameFinder.Models
         public virtual Game Game { get; set; }
 
         [Required, Range(0, 10)]
-        public double GameVisuals { get; set; }
+        public int GameVisuals { get; set; }
 
         [Required, Range(0, 10)]
-        public double GamePlay { get; set; }
+        public int GamePlay { get; set; }
 
         [Required, Range(0, 10)]
-        public double OverallEnjoyment { get; set; }
+        public int OverallEnjoyment { get; set; }
 
         [Required, Range(0, 10)]
-        public double GameUI { get; set; }
+        public int GameUI { get; set; }
 
-        public double AverageRating
+        public int AverageRating
         {
             get
             {

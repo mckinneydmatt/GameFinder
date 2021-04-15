@@ -1,6 +1,7 @@
 ﻿using GameFinder.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -30,6 +31,18 @@ namespace GameFinder.Controllers
             if (await _context.SaveChangesAsync() == 1)
                 return Ok($"You rated game {gameEntity.GameTitle} Successfully!");
             return InternalServerError();
+        }
+
+        [HttpGet]
+
+        public async Task<IHttpActionResult> GetByRating([FromUri]int rating)
+        {
+            
+
+            var listOfGames = await _context.Game.Include(x => x.Ratings).ToListAsync();
+            var listOfFilteredGames = listOfGames?.Where(x => x.Rating == rating) ?? new List<Game>();
+
+            return Ok(listOfFilteredGames);
         }
 
 
