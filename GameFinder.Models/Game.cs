@@ -17,12 +17,20 @@ namespace GameFinder.Models
 
         [Required]
         public string GameTitle { get; set; }
+
+        public virtual List<Game> GameTitles { get; set; }
+        public bool IsSinglePlayer { get; set; }
+
+        // [Required]
+        public Genre GameGenre { get; set; }
+
         public virtual List<Genre> Genres { get; set; }
        // [Required]
        // public Genre GameGenre { get; set; }
         public int GameGenreId { get; set; }
 
         public string GenreName { get; set; }
+
 
        // [Required]
         public MaturityRating MatRating { get; set; }

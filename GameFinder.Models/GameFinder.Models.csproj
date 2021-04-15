@@ -46,6 +46,11 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,7 +72,20 @@
     <Compile Include="Migrations\202104151951086_GenreTest7.Designer.cs">
       <DependentUpon>202104151951086_GenreTest7.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104151335027_first migration.cs" />
+    <Compile Include="Migrations\202104151335027_first migration.Designer.cs">
+      <DependentUpon>202104151335027_first migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104151837005_SecondMigration.cs" />
+    <Compile Include="Migrations\202104151837005_SecondMigration.Designer.cs">
+      <DependentUpon>202104151837005_SecondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104151839459_thirdmigration.cs" />
+    <Compile Include="Migrations\202104151839459_thirdmigration.Designer.cs">
+      <DependentUpon>202104151839459_thirdmigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="GameListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +98,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104151951086_GenreTest7.resx">
       <DependentUpon>202104151951086_GenreTest7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104151335027_first migration.resx">
+      <DependentUpon>202104151335027_first migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104151837005_SecondMigration.resx">
+      <DependentUpon>202104151837005_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104151839459_thirdmigration.resx">
+      <DependentUpon>202104151839459_thirdmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
