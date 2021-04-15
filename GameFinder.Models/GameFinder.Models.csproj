@@ -56,9 +56,16 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="GameFinderDbContext.cs" />
+    <Compile Include="Genre.cs" />
+    <Compile Include="GenreCreate.cs" />
+    <Compile Include="GenreDetail.cs" />
     <Compile Include="Migrations\202104142010101_InitialMigration.cs" />
     <Compile Include="Migrations\202104142010101_InitialMigration.Designer.cs">
       <DependentUpon>202104142010101_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104151713395_FirstMigration.cs" />
+    <Compile Include="Migrations\202104151713395_FirstMigration.Designer.cs">
+      <DependentUpon>202104151713395_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202104142010101_InitialMigration.resx">
       <DependentUpon>202104142010101_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104151713395_FirstMigration.resx">
+      <DependentUpon>202104151713395_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

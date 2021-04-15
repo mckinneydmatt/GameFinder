@@ -11,7 +11,7 @@ using System.Web.Http;
 
 namespace GameFinder.Controllers
 {
-    public class AddGameController : ApiController
+    public class GameController : ApiController
     {
         private readonly GameFinderDbContext _context = new GameFinderDbContext();
 
@@ -35,6 +35,13 @@ namespace GameFinder.Controllers
         //Game game = await _context.Game.ToListAsync();
         //return Ok(game);
         //}
+
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAll()
+        {
+            List<Game> game = await _context.Game.ToListAsync();
+            return Ok(game);
+        }
 
     }
 }

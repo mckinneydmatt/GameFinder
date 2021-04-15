@@ -10,7 +10,7 @@ namespace GameFinder.Models
     public class Game
     {
         public enum MaturityRating {E =1, E10, T, M }
-        public enum Genre {Action =1, RPG, Shooter, Horror, Mystery, Puzzle, Moba }
+       //public enum Genre {Action =1, RPG, Shooter, Horror, Mystery, Puzzle, Moba }
 
         [Key]
         public int ID { get; set; }
@@ -19,7 +19,9 @@ namespace GameFinder.Models
         public String GameTitle { get; set; }
 
        // [Required]
-        public Genre GameGenre { get; set; }
+       // public Genre GameGenre { get; set; }
+        public int GameGenreId { get; set; }
+        public string GenreName { get; set; }
 
        // [Required]
         public MaturityRating MatRating { get; set; }
