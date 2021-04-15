@@ -56,9 +56,16 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="GameFinderDbContext.cs" />
-    <Compile Include="Migrations\202104142010101_InitialMigration.cs" />
-    <Compile Include="Migrations\202104142010101_InitialMigration.Designer.cs">
-      <DependentUpon>202104142010101_InitialMigration.cs</DependentUpon>
+    <Compile Include="Genre.cs" />
+    <Compile Include="GenreCreate.cs" />
+    <Compile Include="GenreDetail.cs" />
+    <Compile Include="Migrations\202104151929406_GenreTest3.cs" />
+    <Compile Include="Migrations\202104151929406_GenreTest3.Designer.cs">
+      <DependentUpon>202104151929406_GenreTest3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104151951086_GenreTest7.cs" />
+    <Compile Include="Migrations\202104151951086_GenreTest7.Designer.cs">
+      <DependentUpon>202104151951086_GenreTest7.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,8 +75,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104142010101_InitialMigration.resx">
-      <DependentUpon>202104142010101_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104151929406_GenreTest3.resx">
+      <DependentUpon>202104151929406_GenreTest3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104151951086_GenreTest7.resx">
+      <DependentUpon>202104151951086_GenreTest7.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
