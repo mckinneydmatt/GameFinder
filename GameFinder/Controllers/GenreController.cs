@@ -30,7 +30,7 @@ namespace GameFinder.Controllers
             var genreService = new GenreService();
             return genreService;
         }
-
+        [HttpGet]
         public async Task<IHttpActionResult> GetGameByGenreName([FromUri] string genre)
         {
             var listOfGames = await _context.Game.Include(x => x.Genres).ToListAsync();
