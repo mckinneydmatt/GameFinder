@@ -1,5 +1,4 @@
-﻿//using GameFinder.Data;
-using GameFinder.Models;
+﻿using GameFinder.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,7 +10,7 @@ using System.Web.Http;
 
 namespace GameFinder.Controllers
 {
-    public class GameController : ApiController
+    public class GamesController : ApiController
     {
         private readonly GameFinderDbContext _context = new GameFinderDbContext();
 
@@ -43,7 +42,7 @@ namespace GameFinder.Controllers
         {
             Game game = await _context.Game.FindAsync(id);
 
-            if(game != null)
+            if (game != null)
             {
                 return Ok(game);
             }
@@ -53,7 +52,7 @@ namespace GameFinder.Controllers
         [HttpPut]
         public async Task<IHttpActionResult> EditGame([FromUri] int id, [FromBody] Models.Game editGame)
         {
-            if(id != editGame?.ID)
+            if (id != editGame?.ID)
             {
                 return BadRequest("IDs do not match");
             }
@@ -70,9 +69,9 @@ namespace GameFinder.Controllers
 
             await _context.SaveChangesAsync();
             return Ok("Game was updated!");
-            
 
-            
+
+
         }
 
         [HttpDelete]
@@ -91,14 +90,7 @@ namespace GameFinder.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<IHttpActionResult> GetAll()
-        {
-            var gameList = await _context.Game.ToListAsync();
-            var listOfFilteredGames = gameList.OrderBy(game => game.GameTitle);
-            return Ok(listOfFilteredGames);
-
-        }
+        
 
         [HttpGet]
         public async Task<IHttpActionResult> GetById([FromUri] int id)
@@ -125,86 +117,5 @@ namespace GameFinder.Controllers
             return BadRequest("No game found with that title");
 
         }
-
-        //[HttpGet]
-        //public async Task<IHttpActionResult> GetByGameTitle([FromUri] string gameTitle)
-        //{
-        //    List<Game> gameList = await _context.Game.ToListAsync();
-
-        //    foreach (Game game in gameList)
-        //    {
-        //        //if (gameTitle = Game.GameTitle && game != null)
-        //        {
-        //            return Ok(game);
-        //        }
-        //        return NotFound();
-        //    }
-
-        //    using (var ctx = new GameFinderDbContext())
-        //    {
-        //        gameList = ctx.Game.Include(gameTitle)
-        //                    .Select(s => new Game()
-        //                    {
-        //                        ID = s.ID,
-        //                        GameTitle = s.GameTitle,
-        //                    }).ToList<Game>();
-        //    }
-
-        //    if (gameList.Count == 0)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return Ok(gameList);
-
-
-        //}
-
-
-
-
-
-
-        //    Game game = await _context.Game.FindAsync(gameTitle);
-
-
-        //    if (game != null)
-        //    {
-        //        return Ok(game);
-        //    }
-        //    return NotFound();
-        //}
-
-        //[HttpGet]
-        //public async Task<IHttpActionResult> GetByGameTitle([FromBody] string gameTitle)
-        //{
-        //    Game game = await _context.Game.FindAsync(gameTitle);
-
-        //    if (gameTitle = Game.GameTitle && game != null)
-        //    {
-        //        return Ok(game);
-        //    }
-        //    return NotFound();
-
-
-
-        //foreach (Game game in _context)
-        //{
-        //    
-
-        //}
-        //return NotFound();
-        //}
-
-        //[HttpGet]
-        //public async Task<IHttpActionResult> GetAll()
-        //{
-        //Game game = await _context.Game.ToListAsync();
-        //return Ok(game);
-        //}
-
-      
-
-
     }
 }

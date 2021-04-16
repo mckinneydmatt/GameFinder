@@ -13,7 +13,7 @@ namespace GameFinder.Models.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202104151335027_first migration"; }
+            get { return "202104152101227_firstmigration"; }
         }
         
         string IMigrationMetadata.Source
