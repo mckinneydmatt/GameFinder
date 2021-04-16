@@ -7,13 +7,13 @@ namespace GameFinder.Models.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class thirdmigration : IMigrationMetadata
+    public sealed partial class second : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(thirdmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(second));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104151525588_third migration"; }
+            get { return "202104152114446_second"; }
         }
         
         string IMigrationMetadata.Source

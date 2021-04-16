@@ -64,40 +64,16 @@
     <Compile Include="Genre.cs" />
     <Compile Include="GenreCreate.cs" />
     <Compile Include="GenreDetail.cs" />
-    <Compile Include="Migrations\202104151929406_GenreTest3.cs" />
-    <Compile Include="Migrations\202104151929406_GenreTest3.Designer.cs">
-      <DependentUpon>202104151929406_GenreTest3.cs</DependentUpon>
+    <Compile Include="GameListItem.cs" />
+    <Compile Include="Migrations\202104152101227_firstmigration.cs" />
+    <Compile Include="Migrations\202104152101227_firstmigration.Designer.cs">
+      <DependentUpon>202104152101227_firstmigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104151951086_GenreTest7.cs" />
-    <Compile Include="Migrations\202104151951086_GenreTest7.Designer.cs">
-      <DependentUpon>202104151951086_GenreTest7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104151335027_first migration.cs" />
-    <Compile Include="Migrations\202104151335027_first migration.Designer.cs">
-      <DependentUpon>202104151335027_first migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104151837005_SecondMigration.cs" />
-    <Compile Include="Migrations\202104151837005_SecondMigration.Designer.cs">
-      <DependentUpon>202104151837005_SecondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104151839459_thirdmigration.cs" />
-    <Compile Include="Migrations\202104151839459_thirdmigration.Designer.cs">
-      <DependentUpon>202104151839459_thirdmigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104151446573_SecondMigration.cs" />
-    <Compile Include="Migrations\202104151446573_SecondMigration.Designer.cs">
-      <DependentUpon>202104151446573_SecondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104151525588_third migration.cs" />
-    <Compile Include="Migrations\202104151525588_third migration.Designer.cs">
-      <DependentUpon>202104151525588_third migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104151812288_fourthmigration.cs" />
-    <Compile Include="Migrations\202104151812288_fourthmigration.Designer.cs">
-      <DependentUpon>202104151812288_fourthmigration.cs</DependentUpon>
+    <Compile Include="Migrations\202104152114446_second.cs" />
+    <Compile Include="Migrations\202104152114446_second.Designer.cs">
+      <DependentUpon>202104152114446_second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="GameListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rating.cs" />
   </ItemGroup>
@@ -106,29 +82,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104151929406_GenreTest3.resx">
-      <DependentUpon>202104151929406_GenreTest3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104152101227_firstmigration.resx">
+      <DependentUpon>202104152101227_firstmigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151951086_GenreTest7.resx">
-      <DependentUpon>202104151951086_GenreTest7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151335027_first migration.resx">
-      <DependentUpon>202104151335027_first migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151837005_SecondMigration.resx">
-      <DependentUpon>202104151837005_SecondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151839459_thirdmigration.resx">
-      <DependentUpon>202104151839459_thirdmigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151446573_SecondMigration.resx">
-      <DependentUpon>202104151446573_SecondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151525588_third migration.resx">
-      <DependentUpon>202104151525588_third migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151812288_fourthmigration.resx">
-      <DependentUpon>202104151812288_fourthmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104152114446_second.resx">
+      <DependentUpon>202104152114446_second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
